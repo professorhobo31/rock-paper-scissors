@@ -1,4 +1,6 @@
 const rockPaperScissorsButton = document.getElementById("button")
+const bestOfFiveButton = document.getElementById("button2")
+
 function getcomputerchoice() {
     let a = Math.random()
     if (a <= 0.33) {
@@ -16,19 +18,22 @@ function getcomputerchoice() {
 }
 
 function buttonPressed() {
-    let input = prompt('Choose between rock, paper or scissors:');
+    let input = prompt('Choose between rock, paper or scissors:', 'rock');
     let playerChoice = input.toLowerCase();
     let pcChoice = getcomputerchoice()
-    console.log(pcChoice)
-    console.log(playerChoice)
+    // console.log(pcChoice)
+    // console.log(playerChoice)
     if (playerChoice == pcChoice) {
-        alert("It's a tie!")
+        alert("It's a tie. REMATCH!!!");
+        return buttonPressed();
     }
     else if (playerChoice == "rock" && pcChoice == "scissors") {
-        alert("The player wins! Rock beats Scissors.")
+        alert("The player wins! Rock beats Scissors.");
+        return "player";
     }
     else if (playerChoice == "rock" && pcChoice == "paper") {
-        alert("The PC wins! Paper beats Rock")
+        alert("The PC wins! Paper beats Rock");
+        return "pc";
     }
     else if (playerChoice == 'paper' && pcChoice == 'rock') {
         alert("The player wins! Paper beats Rock")
@@ -47,3 +52,23 @@ function buttonPressed() {
     }
 }
 rockPaperScissorsButton.addEventListener("click", buttonPressed)
+
+function game() {
+    let pcScore = 0
+    let playerScore = 0
+    for (let i = 1; i <= 5; i++) {
+        let a = buttonPressed()
+        if (a == "player") {
+            playerScore++
+        }
+        else if (a == "pc") {
+            pcScore++
+        }
+        else if (a == "tie") {
+            i--
+        }
+    }
+    console.log(pcScore)
+    console.log(playerScore)
+}
+bestOfFiveButton.addEventListener("click", game)
