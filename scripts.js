@@ -80,7 +80,7 @@ function fiveRound() {
         alert("The player won the 5 round match!")
     }
 }
-bestOfFiveButton.addEventListener("click", fiveRound)
+// bestOfFiveButton.addEventListener("click", fiveRound)
 
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
