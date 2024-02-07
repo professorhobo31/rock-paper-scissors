@@ -17,15 +17,15 @@ function getcomputerchoice() {
     }
 }
 
-function buttonPressed() {
-    let input = prompt('Choose between rock, paper or scissors:', 'rock');
-    let playerChoice = input.toLowerCase();
+function singleRound(playerChoice) {
+    // let input = prompt('Choose between rock, paper or scissors:', 'rock');
+    // let playerChoice = input.toLowerCase();
     let pcChoice = getcomputerchoice()
     console.log(pcChoice)
     console.log(playerChoice)
     if (playerChoice == pcChoice) {
         alert("It's a tie. REMATCH!!!");
-        return buttonPressed();
+        // return singleRound();
     }
     else if (playerChoice == "rock" && pcChoice == "scissors") {
         alert("The player wins! Rock beats Scissors.");
@@ -52,17 +52,17 @@ function buttonPressed() {
         return "pc";
     }
     else {
-        alert('You may only type "rock", "paper" or "scissors". No typos allowed');
-        return buttonPressed();
+        // alert('You may only type "rock", "paper" or "scissors". No typos allowed');
+        // return singleRound();
     }
 }
-rockPaperScissorsButton.addEventListener("click", buttonPressed)
+// rockPaperScissorsButton.addEventListener("click", singleRound)
 
-function game() {
+function fiveRound() {
     let pcScore = 0
     let playerScore = 0
     for (let i = 1; i <= 5; i++) {
-        let a = buttonPressed()
+        let a = singleRound()
         if (a == "player") {
             playerScore++
         }
@@ -80,4 +80,24 @@ function game() {
         alert("The player won the 5 round match!")
     }
 }
-bestOfFiveButton.addEventListener("click", game)
+bestOfFiveButton.addEventListener("click", fiveRound)
+
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+
+function rockChoice() {
+    singleRound('rock')
+}
+
+function paperChoice() {
+    singleRound('paper')
+}
+
+function scissorsChoice() {
+    singleRound('scissors')
+}
+
+rockBtn.addEventListener('click', rockChoice)
+paperBtn.addEventListener('click', paperChoice)
+scissorsBtn.addEventListener('click', scissorsChoice)

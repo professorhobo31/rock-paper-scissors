@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 207, 129);
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(255, 185, 150);
+}
+
+p {
+    display: flex;
+    height: 64px;
+    line-height: 32px;
+    padding: 16px 12% 8px;
+    background-color: rgb(253, 255, 171)
+}
+
+#playerButtons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background-color: rgb(255, 207, 129);
+}
+
+button {
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+  }

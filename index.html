@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roshambo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 style="font-size: 48px; text-align: center;">Rock-Paper-Scissors</h1>
-    <p1 style="display: flex; justify-content: center; margin-left: 12%; margin-right: 12%;"> You may play against an advanced generative AI trained on a dataset of three billion games of Rock-Paper-Scissors.
-        You may challenge the AI to a single round or a best of five.</p1>
-    <div style="display: flex; justify-content: center; gap: 10px;">
+    <p> You may play against an advanced generative AI trained on a dataset of three billion games of Rock-Paper-Scissors.
+        You may challenge this AI to a game of five, and the winner shall earn a rare cactus.</p>
+    <div id="oldButtons" style="display: flex; justify-content: center; gap: 10px;">
         <button id="button">Play</button>
         <button id="button2">Play Best of 5</button>    
+    </div>
+    <div id="resultsArea">
+        <div id="numberBoard"></div>
+        <div id="scoreboard"></div>
+    </div>
+    <div id="playerButtons">
+        <button id="rock"><img src="images/rock.png" alt="Rock"></button>
+        <button id="paper"><img src="images/paper.png" alt="Paper"></button>
+        <button id="scissors"><img src="images/scissors.png" alt="Scissors"></button>
     </div>
     <script src="scripts.js"></script>
 </body>
