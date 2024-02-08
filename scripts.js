@@ -90,19 +90,38 @@ let pcScore = 0
 let playerDisplay = document.querySelector('.player')
 let pcDisplay = document.querySelector('.AI')
 
+function checkWinner() {
+    if (playerScore >= 5) {
+        alert('Player wins the match!');
+        playerScore = 0;
+        pcScore = 0;
+        playerDisplay.textContent = playerScore;
+        pcDisplay.textContent = pcScore;
+    }
+    else if (pcScore >= 5) {
+        alert('The advanced AI wins the match!');
+        playerScore = 0;
+        pcScore = 0;
+        playerDisplay.textContent = playerScore;
+        pcDisplay.textContent = pcScore;
+    }
+}
+
 function rockChoice() {
     let result = singleRound('rock')
     if (result == "player") {
-        playerScore++
-        console.log(playerScore)
-        console.log(pcScore)
-        playerDisplay.textContent = playerScore
+        playerScore++;
+        console.log(playerScore);
+        console.log(pcScore);
+        playerDisplay.textContent = playerScore;
+        checkWinner();
     }
     else if (result == "pc") {
-        pcScore++
-        console.log(playerScore)
-        console.log(pcScore)
-        pcDisplay.textContent = pcScore
+        pcScore++;
+        console.log(playerScore);
+        console.log(pcScore);
+        pcDisplay.textContent = pcScore;
+        checkWinner();
     }
     else {
         return
@@ -112,16 +131,18 @@ function rockChoice() {
 function paperChoice() {
     let result = singleRound('paper')
     if (result == "player") {
-        playerScore++
-        console.log(playerScore)
-        console.log(pcScore)
-        playerDisplay.textContent = playerScore
+        playerScore++;
+        console.log(playerScore);
+        console.log(pcScore);
+        playerDisplay.textContent = playerScore;
+        checkWinner();
     }
     else if (result == "pc") {
-        pcScore++
-        console.log(playerScore)
-        console.log(pcScore)
-        pcDisplay.textContent = pcScore
+        pcScore++;
+        console.log(playerScore);
+        console.log(pcScore);
+        pcDisplay.textContent = pcScore;
+        checkWinner();
     }
     else {
         return
@@ -131,16 +152,18 @@ function paperChoice() {
 function scissorsChoice() {
     let result = singleRound('scissors')
     if (result == "player") {
-        playerScore++
-        console.log(playerScore)
-        console.log(pcScore)
-        playerDisplay.textContent = playerScore
+        playerScore++;
+        console.log(playerScore);
+        console.log(pcScore);
+        playerDisplay.textContent = playerScore;
+        checkWinner();
     }
     else if (result == "pc") {
-        pcScore++
-        console.log(playerScore)
-        console.log(pcScore)
-        pcDisplay.textContent = pcScore
+        pcScore++;
+        console.log(playerScore);
+        console.log(pcScore);
+        pcDisplay.textContent = pcScore;
+        checkWinner();
     }
     else {
         return
