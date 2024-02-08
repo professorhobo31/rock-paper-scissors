@@ -39,8 +39,38 @@ button {
     transition: all 0.8s ease;
   }
 
-
-
 button:hover {
     transform: rotateY(180deg);
+}
+
+#resultsArea {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    border: 2px green solid;
+}
+
+#numberBoard {
+    display: flex;
+    gap: 75px;
+    margin-top: 8px;
+}
+
+.numberDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    background-color: rgba(255, 255, 255, 0.25);
+    height: 125px;
+    width: 125px;
+    border-radius: 8px;
+    font-size: 64px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.separator {
+    font-size: 64px;
+    text-align: center;
+    margin-top: 24px;
 }
